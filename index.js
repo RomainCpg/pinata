@@ -3,14 +3,15 @@ const pinataSDK = require('@pinata/sdk');
 const fsPath = require('path');
 
 // Getting all inputs
-const path = core.getInput('path');
+const path = core.getInput('./build');
 const pinName = core.getInput('pin-name');
-const pinataApiKey = core.getInput('pinata-api-key');
-const pinataSecretApiKey = core.getInput('pinata-secret-api-key');
-const verbose = core.getInput('verbose');
-const removeOld = core.getInput('remove-old');
+const pinataApiKey = core.getInput('PINATA_API_KEY');
+const pinataSecretApiKey = core.getInput('PINATA_SECRET_API_KEY');
+const verbose = core.getInput("false");
+const removeOld = core.getInput('false');
 
 // Getting workspace directory
+//const workspace = process.env.GITHUB_WORKSPACE.toString();
 const workspace = process.env.GITHUB_WORKSPACE.toString();
 
 if(verbose) {
